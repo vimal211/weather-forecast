@@ -13,7 +13,7 @@ document.getElementsByClassName('search-box')[0].addEventListener('keyup',functi
     let hi_low = document.getElementsByClassName('hi-low')[0];
 
     if(event.keyCode===13){
-        const url =`http://api.openweathermap.org/data/2.5/weather?q=${document.getElementsByClassName("search-box")[0].value}&units=metric&appid=${apikey}`
+        const url =`https://api.openweathermap.org/data/2.5/weather?q=${document.getElementsByClassName("search-box")[0].value}&units=metric&appid=${apikey}`
         fetch(url).then(response=>response.json()).then(data=>{
             city.innerHTML=`${data.name}, ${data.sys.country}`;
             temp.innerHTML=`${(data.main.temp).toFixed(0)}°c`;
